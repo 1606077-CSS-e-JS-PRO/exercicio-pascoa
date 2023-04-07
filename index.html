@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="cabecalhoSecundario secao-layout">
+        <nav class="cabecalhoSecundario__menu">
+            <a href="">Principal</a>
+            <a href="">Contato</a>
+        </nav>
+    </div>
+
+    <header class="cabecalhoPrincipal secao-layout">
+        <h1>Treinando</h1>
+    </header>
+
+    <main class="conteudoPrincipal secao-layout">
+        <div class="card-exercicio">
+            <div class="entradas">
+                <input id="primeiroInput" placeholder="Digite um número" type="text" name="" id="">
+                <input id="segundoInput" placeholder="Digite um número" type="text" name="" id="">
+                <button onclick="executarSoma()" class="botaoPrincipal">Somar</button>
+            </div>
+            <div class="saidas" id="saidaExterna">
+                Resultado: <span id="resultadoSoma">0</span>
+
+                <div id="toast">DEU ERRO!</div>
+            </div>
+        </div>
+        <div class="card-exercicio">
+            <div class="entradas">
+                <input id="idPokemon" placeholder="ID Pokemon" type="text" name="">
+                <button onclick="executarPokemon()" class="botaoPrincipal">Buscar</button>
+            </div>
+            <div class="saidas">
+                Nome: <span id="nomePokemon">-</span>
+                <img id="imagemPokemon" src="" alt="Imagem do pokemon">
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape secao-layout">
+        Construído por Sabino
+    </footer>
+</body>
+
+</html>

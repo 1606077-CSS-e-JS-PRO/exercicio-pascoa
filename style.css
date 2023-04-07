@@ -1,0 +1,158 @@
+:root {
+  --cor-amarelo: #fce6a8;
+  --cor-verde: #d2e4e1;
+  --cinza-claro: #e3e8ed;
+  --cinza-medio: #ced8e0;
+  --cinza-escuro: #788896;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    /* height: 100%; */
+}
+body {
+  height: 100vh;
+  margin: 0px;
+
+  background-color: var(--cor-amarelo);
+  padding: 5px;
+
+  display: grid;
+  gap: 5px;
+
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+  grid-template-columns: 0.5fr 1fr;
+
+  grid-template-areas:
+    "cabecalhoSecundario cabecalhoPrincipal"
+    "conteudoPrincipal conteudoPrincipal"
+    "rodape rodape";
+}
+
+.secao-layout {
+  background-color: var(--cor-verde);
+  padding: 10px;
+}
+
+.cabecalhoSecundario {
+  grid-area: cabecalhoSecundario;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabecalhoSecundario__menu {
+  display: flex;
+  gap: 3px;
+}
+
+.cabecalhoSecundario__menu > a {
+  text-decoration: none;
+  padding: 8px 13px;
+  background-color: var(--cinza-escuro);
+  color: white;
+
+  border-radius: 5px;
+}
+
+.cabecalhoPrincipal {
+  grid-area: cabecalhoPrincipal;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rodape {
+  /* grid-row: 3; */
+  /* grid-column: 1 / 3; */
+  grid-area: rodape;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudoPrincipal {
+  grid-area: conteudoPrincipal;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20% 40px 20%;
+}
+
+.card-exercicio {
+  background-color: var(--cinza-claro);
+
+  padding: 20px;
+
+  flex-grow: 1;
+  width: 100%;
+
+  gap: 20px;
+
+  display: flex;
+}
+
+.entradas {
+  flex-basis: 0;
+  flex-grow: 1;
+
+  padding: 20px 0px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  justify-content: center;
+}
+
+.botaoPrincipal {
+  padding: 8px 13px;
+  background-color: var(--cinza-escuro);
+  color: white;
+
+  box-shadow: none;
+  border: none;
+
+  border-radius: 5px;
+}
+
+.entradas > * {
+  width: 100%;
+}
+
+.entradas > input {
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.saidas {
+  flex-basis: 0;
+  flex-grow: 1;
+
+  padding: 4px;
+  border: var(--cinza-escuro) 3px solid;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#resultadoSoma {
+    font-size: 90px;
+}
+
+
+
+#toast {
+    display: none;
+}
