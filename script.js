@@ -1,37 +1,60 @@
 console.log("Teste")
 
 
-function executarSoma() {
-    // Capturar os elementos para usar depois
-    const toast = document.getElementById("toast")
-    const elResultadoSoma = document.getElementById("resultadoSoma")
-    const saidaExterna = document.getElementById("saidaExterna")
-    saidaExterna.innerHTML = "<br>"
+function pegarValorNumericoDeInput(idInput) {
+    console.log("Pegando valor...")
 
-    // Reset
-    toast.style.display = "none"
-    elResultadoSoma.innerHTML = 0
+    const elementoInput = document.getElementById(idInput)
+    const valorTexto = elementoInput.value
 
-    // Entradas
-    // Dos elementos inputs do HTML
-    const primeiroInput = document.getElementById("primeiroInput")
-    const segundoInput = document.getElementById("segundoInput")
-
-    const primeiroNumero = primeiroInput.value
-    const segundoNumero = segundoInput.value
-
-    // Validação
-    if (primeiroNumero == "" || segundoNumero == "") {
-        toast.style.display = "block"
+    if (valorTexto == "") {
+        alert("Deu erro!")
 
         return
     }
 
+    const valorNumerico = Number(valorTexto)
+
+    return valorNumerico
+}
+
+let resultadoExterno = dividirDoisNumeros(15, 3)
+
+
+/*
+    dividirDoisNumeros
+    Parametros: numeroUm numerico e numeroDois numerico
+    Retorno:
+    Retorna o resultado de uma divisão entre dois números
+    OU -101 caso tente dividir por 0
+*/
+
+function dividirDoisNumeros(numeroUm, numeroDois) {
+    let resultado = 0
+
+    if (numeroDois != 0) {
+        resultado = Number(numeroUm) / Number(numeroDois)
+    } else {
+        resultado = -101
+    }
+
+    return resultado
+}
+
+
+function executarSoma() {
+    // Entradas
+    // Dos elementos inputs do HTML
+
+    const numeroUm = pegarValorNumericoDeInput("primeiroInput")
+    const numeroDois = pegarValorNumericoDeInput("segundoInput")
+
     // Processamento
-    const resultado = Number(primeiroNumero) + Number(segundoNumero)
+    let resultado = dividirDoisNumeros(numeroUm, numeroDois)
 
     // Saída
     // Lá na tela, onde tem o card exercicio
+    const elResultadoSoma = document.getElementById("resultadoSoma")
     elResultadoSoma.innerHTML = resultado
 }
 

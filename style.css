@@ -149,9 +149,8 @@ body {
 
 #resultadoSoma {
     font-size: 90px;
+    align-self: center;
 }
-
-
 
 #toast {
     display: none;
